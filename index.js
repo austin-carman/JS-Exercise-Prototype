@@ -101,14 +101,17 @@ Car.prototype.fill = function(gallons){
 
 Car.prototype.drive = function(distance) {
   this.odometer += distance;
+  this.tank = this.tank - (distance / this.milesPerGallon)
+  return `I ran out of fuel at ${this.odometer} miles!`
 }
-  
+
+// Testing
 const myCar = new Car("mazda", 30);
 myCar.odometer = 100;
 myCar.distance = 20;
 console.log(myCar.odometer);
 console.log(myCar.distance);
-console.log(myCar.drive(30)); 
+// console.log(myCar.drive(30)); //Why is this undefined
 
   /*
     TASK 3
@@ -117,18 +120,26 @@ console.log(myCar.drive(30));
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+ function Baby(name, age, favoriteToy) {
+   Person.call(this, name, age),
+   this.favoriteToy = favoriteToy
+  }
+  
+  Baby.prototype = Object.create(Person.prototype);
+
+  Baby.prototype.play = function(){
+    return `Playing with ${this.favoriteToy}`;
   }
  
+  
   
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. window/global binding: when in the global scope, 'this' will be the window object 
+    2. implicit binding: object.function(); --> 'this' is implicitly bound to the object before the function invoked (before the .function()) 
+    3. new binding: the 'new' keyword used with a constructor function assigns 'this' to the newly created object or variable assigned to the new object. 
+    4. explicit binding: .call, .bind, .apply methods called with a function explicitly assign 'this' to the object passed in as the argument to the function
   */
   
   
