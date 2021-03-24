@@ -16,11 +16,11 @@ In order to complete these tasks you will need your newly aquired knowledge of c
 ### Task 1 - Set up Project
 
   1. x Fork repo
-  1. Clone _your_ fork (not Lambda's repo by mistake!).
-  1. `cd` into your newly cloned repository.
-  1. Create a new branch by typing `git checkout -b <firstName-lastName>`.
-  1. Install dependencies by typing `npm install`.
-  1. Run tests by typing `npm run test:watch`.
+  1. xClone _your_ fork (not Lambda's repo by mistake!).
+  1. x`cd` into your newly cloned repository.
+  1. xCreate a new branch by typing `git checkout -b <firstName-lastName>`.
+  1. xInstall dependencies by typing `npm install`.
+  1. xRun tests by typing `npm run test:watch`.
   1. Work on your branch, push commits and create PR as usual.
   1. Make sure to commit often!!
 
